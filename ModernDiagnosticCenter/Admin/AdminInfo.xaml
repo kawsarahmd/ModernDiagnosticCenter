@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="ModernDiagnosticCenter.Admin.AdminInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="700">
+    <Grid Style="{StaticResource ContentRoot}">
+        <Label Content="Username" HorizontalAlignment="Left" Margin="139,39,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="admin_user_name_change" HorizontalAlignment="Left" Height="23" Margin="226,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271"/>
+        <Button Content="Change" HorizontalAlignment="Left" Margin="406,76,0,0" VerticalAlignment="Top" Width="91" FontWeight="Bold"/>
+        <Label Content="Old Password" HorizontalAlignment="Left" Margin="120,163,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.413,-0.875" FontWeight="Bold"/>
+        <Label Content="New Password" HorizontalAlignment="Left" Margin="115,208,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.347,0.643" FontWeight="Bold"/>
+        <Label Content="Re-type New Password" HorizontalAlignment="Left" Margin="70,249,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.448,-0.653" FontWeight="Bold"/>
+        <Button Content="Change" HorizontalAlignment="Left" Margin="406,293,0,0" VerticalAlignment="Top" Width="91" FontWeight="Bold"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="226,163,0,0" VerticalAlignment="Top" Width="271"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="226,208,0,0" VerticalAlignment="Top" Width="271"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="226,249,0,0" VerticalAlignment="Top" Width="271"/>
+    </Grid>
+</UserControl>
+

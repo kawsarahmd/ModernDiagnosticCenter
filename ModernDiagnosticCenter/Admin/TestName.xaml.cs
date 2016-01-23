@@ -69,6 +69,30 @@ namespace ModernDiagnosticCenter.Admin
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            string dbConnectionString = @"Data Source=patient.db;Version=3;";
+            SQLiteConnection sqlite_connection = new SQLiteConnection(dbConnectionString);
+
+            try
+            {
+                sqlite_connection.Open();
+
+                //string query = "select * from test_name where test_name='" + admin_test_name_combobox_update.Text + "'";
+                //int price = Int32.Parse(admin_price_update.Text);
+                string query = "INSERT INTO test_name (test_name,test_price) VALUES('" + admin_test_name_add.Text + "'," + Int32.Parse(admin_add_price.Text) + ")";
+
+                SQLiteCommand create_command = new SQLiteCommand(query, sqlite_connection);
+                create_command.ExecuteNonQuery();
+
+                MessageBox.Show("Successfully added!!");
+                admin_test_name_add.Text = "";
+                admin_add_price.Text = "";
+
+                sqlite_connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -197,6 +221,9 @@ namespace ModernDiagnosticCenter.Admin
                 create_command.ExecuteNonQuery();
 
                 MessageBox.Show("Price Updated to " + price + "!!");
+                admin_price_update.Text = "";
+                admin_test_name_combobox_update.Text = "";
+
 
                 sqlite_connection.Close();
             }
@@ -226,6 +253,7 @@ namespace ModernDiagnosticCenter.Admin
                 create_command.ExecuteNonQuery();
 
                 MessageBox.Show("Successfully Deleted " + admin_test_name_combobox_remove.Text + "!!");
+                admin_test_name_combobox_remove.Text = "";
 
                 sqlite_connection.Close();
             }

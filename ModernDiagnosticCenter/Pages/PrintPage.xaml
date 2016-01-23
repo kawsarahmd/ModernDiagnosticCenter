@@ -18,59 +18,59 @@
                 </Grid.RowDefinitions>
                 <Label Content="MODERN DIAGNOSTIC CENTER" HorizontalAlignment="Left" Margin="87,55,0,0" VerticalAlignment="Top" Width="539" FontSize="36" Background="Transparent" FontWeight="Bold"/>
                 <Label Content="D.B Road Gaibandha" HorizontalAlignment="Left" Margin="305,108,0,0" VerticalAlignment="Top"/>
-                <Label Content="Bill No:" HorizontalAlignment="Left" Margin="64,202,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
+                <Label Content="Bill No:" HorizontalAlignment="Left" Margin="64,202,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Times New Roman"/>
                 <Label Content="Name :" HorizontalAlignment="Left" Margin="64,282,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
-                <Label Content="Date:" HorizontalAlignment="Left" Margin="420,202,0,0" VerticalAlignment="Top" FontStyle="Italic" RenderTransformOrigin="0.519,-2.125"/>
+                <Label Content="Date:" HorizontalAlignment="Left" Margin="420,202,0,0" VerticalAlignment="Top" FontStyle="Italic" RenderTransformOrigin="0.519,-2.125" FontFamily="Times New Roman"/>
                 <Label Content="Age    :" HorizontalAlignment="Left" Margin="64,303,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
                 <Label Content="Refd By :" HorizontalAlignment="Left" Margin="64,324,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
                 <Label Content="Phone No : " HorizontalAlignment="Left" Margin="399,303,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
                 <Label Content="Delivery Date  :" HorizontalAlignment="Left" Margin="245,376,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="1.022,0.789"/>
-                <TextBlock x:Name="print_name" HorizontalAlignment="Left" Margin="117,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.52,-0.312"/>
-                <TextBlock x:Name="print_age" HorizontalAlignment="Left" Margin="117,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_refd_by" HorizontalAlignment="Left" Margin="117,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_delivery_date" HorizontalAlignment="Left" Margin="352,378,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.76,0.125"/>
-                <TextBlock x:Name="print_bill_no" HorizontalAlignment="Left" Margin="117,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_date" HorizontalAlignment="Left" Margin="461,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_time" Text="Time" HorizontalAlignment="Left" Margin="592,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.4,-0.125" FontSize="11"/>
+                <TextBlock x:Name="print_name" HorizontalAlignment="Left" Margin="117,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.52,-0.312" FontFamily="Times New Roman"/>
+                <TextBlock x:Name="print_age" HorizontalAlignment="Left" Margin="117,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Times New Roman"/>
+                <TextBlock x:Name="print_refd_by" HorizontalAlignment="Left" Margin="117,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Times New Roman"/>
+                <TextBlock x:Name="print_delivery_date" HorizontalAlignment="Left" Margin="352,378,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.76,0.125" FontFamily="Times New Roman"/>
+                <TextBlock x:Name="print_bill_no" HorizontalAlignment="Left" Margin="117,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Times New Roman"/>
+                <TextBlock x:Name="print_date" HorizontalAlignment="Left" Margin="461,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Times New Roman"/>
+                <TextBlock x:Name="print_time" Text="Time" HorizontalAlignment="Left" Margin="592,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.4,-0.125" FontSize="11" FontFamily="Times New Roman"/>
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="51,234,0,0" VerticalAlignment="Top" Width="629"/>
                 <Label Content="MODERN" HorizontalAlignment="Left" Margin="209,521,0,0" VerticalAlignment="Top" FontSize="72" FontWeight="Bold" Opacity="0.2"/>
                 <Label Content="DIAGNOSTIC" HorizontalAlignment="Left" Margin="301,611,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" Opacity="0.2"/>
                 <Label Content="CENTER" HorizontalAlignment="Left" Margin="278,643,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.536,0.812" FontWeight="Bold" FontSize="48" Opacity="0.2"/>
                 <TextBlock x:Name="print_phone_no" HorizontalAlignment="Left" Margin="465,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.6,-0.188"/>
                 <Label Content="Cash Memo" HorizontalAlignment="Left" Margin="309,129,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" FontStyle="Italic" FontFamily="Times New Roman"/>
-                <Label Content="No." HorizontalAlignment="Left" Margin="100,435,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
-                <Label Content="Test Name" HorizontalAlignment="Left" Margin="149,435,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
-                <Label Content="Amount  (Tk)" HorizontalAlignment="Left" Margin="592,435,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
+                <Label Content="No." HorizontalAlignment="Left" Margin="100,435,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Times New Roman"/>
+                <Label Content="Test Name" HorizontalAlignment="Left" Margin="149,435,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Times New Roman"/>
+                <Label Content="Amount  (Tk)" HorizontalAlignment="Left" Margin="592,435,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Times New Roman"/>
                 <TextBlock x:Name="print_no_1" HorizontalAlignment="Left" Margin="102,487,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="1."/></TextBlock>
-                <TextBlock x:Name="print_no_2" HorizontalAlignment="Left" Margin="102,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="2."/></TextBlock>
-                <TextBlock x:Name="print_no_3" HorizontalAlignment="Left" Margin="102,530,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="3."/></TextBlock>
-                <TextBlock x:Name="print_no_4" HorizontalAlignment="Left" Margin="102,551,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="4."/></TextBlock>
-                <TextBlock x:Name="print_no_5" HorizontalAlignment="Left" Margin="102,572,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="5."/></TextBlock>
-                <TextBlock x:Name="print_no_6" HorizontalAlignment="Left" Margin="102,593,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="6."/></TextBlock>
-                <TextBlock x:Name="print_no_7" HorizontalAlignment="Left" Margin="102,611,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="7."/></TextBlock>
-                <TextBlock x:Name="print_no_8" HorizontalAlignment="Left" Margin="102,630,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="8."/></TextBlock>
-                <TextBlock x:Name="print_no_9" HorizontalAlignment="Left" Margin="102,651,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="9."/></TextBlock>
-                <TextBlock x:Name="print_no_10" HorizontalAlignment="Left" Margin="95,672,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0,0.562"><Run Language="en-gb" Text="10."/></TextBlock>
+                <TextBlock x:Name="print_no_2" HorizontalAlignment="Left" Margin="102,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_no_3" HorizontalAlignment="Left" Margin="102,530,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_no_4" HorizontalAlignment="Left" Margin="102,551,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_no_5" HorizontalAlignment="Left" Margin="102,572,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_no_6" HorizontalAlignment="Left" Margin="102,593,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_no_7" HorizontalAlignment="Left" Margin="102,611,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_no_8" HorizontalAlignment="Left" Margin="102,630,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_no_9" HorizontalAlignment="Left" Margin="102,651,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_no_10" HorizontalAlignment="Left" Margin="95,672,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0,0.562"/>
                 <TextBlock x:Name="print_test_name_1" HorizontalAlignment="Left" Margin="149,487,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_test_name_2" HorizontalAlignment="Left" Margin="149,508,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_test_name_3" HorizontalAlignment="Left" Margin="149,530,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_test_name_4" HorizontalAlignment="Left" Margin="149,551,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_test_name_5" HorizontalAlignment="Left" Margin="149,572,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_test_name_6" HorizontalAlignment="Left" Margin="149,593,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_test_name_7" HorizontalAlignment="Left" Margin="149,611,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_test_name_8" HorizontalAlignment="Left" Margin="149,632,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_test_name_9" HorizontalAlignment="Left" Margin="149,653,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_test_name_10" HorizontalAlignment="Left" Margin="149,672,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_test_name_2" HorizontalAlignment="Left" Margin="149,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_test_name_3" HorizontalAlignment="Left" Margin="149,530,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_test_name_4" HorizontalAlignment="Left" Margin="149,551,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_test_name_5" HorizontalAlignment="Left" Margin="149,572,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_test_name_6" HorizontalAlignment="Left" Margin="149,593,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_test_name_7" HorizontalAlignment="Left" Margin="149,611,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_test_name_8" HorizontalAlignment="Left" Margin="149,632,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_test_name_9" HorizontalAlignment="Left" Margin="149,653,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_test_name_10" HorizontalAlignment="Left" Margin="149,672,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
                 <TextBlock x:Name="print_amount_1" HorizontalAlignment="Left" Margin="592,487,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_amount_2" HorizontalAlignment="Left" Margin="592,508,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_amount_3" HorizontalAlignment="Left" Margin="592,529,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_amount_4" HorizontalAlignment="Left" Margin="592,550,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_amount_5" HorizontalAlignment="Left" Margin="592,571,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_amount_6" HorizontalAlignment="Left" Margin="592,592,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_amount_7" HorizontalAlignment="Left" Margin="592,613,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_amount_8" HorizontalAlignment="Left" Margin="592,635,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_amount_9" HorizontalAlignment="Left" Margin="592,654,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock x:Name="print_amount_10" HorizontalAlignment="Left" Margin="592,672,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.94"/>
+                <TextBlock x:Name="print_amount_2" HorizontalAlignment="Left" Margin="592,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_amount_3" HorizontalAlignment="Left" Margin="592,529,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_amount_4" HorizontalAlignment="Left" Margin="592,550,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_amount_5" HorizontalAlignment="Left" Margin="592,571,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_amount_6" HorizontalAlignment="Left" Margin="592,592,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_amount_7" HorizontalAlignment="Left" Margin="592,613,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_amount_8" HorizontalAlignment="Left" Margin="592,635,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_amount_9" HorizontalAlignment="Left" Margin="592,654,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_amount_10" HorizontalAlignment="Left" Margin="592,672,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.94"/>
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="54,463,0,0" VerticalAlignment="Top" Width="626"/>
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="51,712,0,0" VerticalAlignment="Top" Width="629"/>
                 <Label Content="Sub Total :" HorizontalAlignment="Left" Margin="491,732,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" RenderTransformOrigin="0.481,0.929"/>
@@ -78,17 +78,18 @@
                 <Label Content="Net Payable :" HorizontalAlignment="Left" Margin="478,788,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.679,0.312" FontFamily="Times New Roman"/>
                 <Label Content="Amount Received :" HorizontalAlignment="Left" Margin="450,809,0,0" VerticalAlignment="Top" FontFamily="Times New Roman"/>
                 <Label Content="Due :" HorizontalAlignment="Left" Margin="517,842,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" RenderTransformOrigin="1.885,0.857"/>
-                <TextBlock HorizontalAlignment="Left" Margin="592,727,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock HorizontalAlignment="Left" Margin="592,749,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock HorizontalAlignment="Left" Margin="592,788,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock HorizontalAlignment="Left" Margin="592,807,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBlock HorizontalAlignment="Left" Margin="592,840,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_sub_total" HorizontalAlignment="Left" Margin="592,727,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_discount" HorizontalAlignment="Left" Margin="592,749,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_net_total" HorizontalAlignment="Left" Margin="592,788,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_ammount_receive" HorizontalAlignment="Left" Margin="592,807,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                <TextBlock x:Name="print_due" HorizontalAlignment="Left" Margin="592,840,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="575,776,0,0" VerticalAlignment="Top" Width="105"/>
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="575,828,0,0" VerticalAlignment="Top" Width="105"/>
                 <TextBlock x:Name="print_dayofweek" HorizontalAlignment="Left" Margin="536,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="11"/>
                 <Label Content="Sex  :" HorizontalAlignment="Left" Margin="245,303,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.857,0.438" FontStyle="Italic"/>
                 <TextBlock x:Name="print_sex_textblock" HorizontalAlignment="Left" Margin="278,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="102" Margin="50,269,0,0" VerticalAlignment="Top" Width="630"/>
+                <TextBlock x:Name="print_bill_id" HorizontalAlignment="Left" Margin="117,202,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontFamily="Times New Roman"/>
 
             </Grid>
 

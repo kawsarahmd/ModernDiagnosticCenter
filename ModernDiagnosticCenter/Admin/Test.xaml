@@ -7,38 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="700">
     <Grid Style="{StaticResource ContentRoot}">
-
-
-        
-
-         <ListView Margin="10,10,11,249" Name="listView1" 
-     ItemTemplate="{DynamicResource Employeetemplate}" 
-     ItemsSource="{Binding Path=Table}" SelectionMode="Single">
-          <!--
-             <ListView.Background>
-                <LinearGradientBrush>
-                    <GradientStop Color="AliceBlue" Offset="0"/>
-                </LinearGradientBrush>
-            </ListView.Background>
-          -->
-            <ListView.Resources>
-                <Style TargetType="{x:Type GridViewColumnHeader}">
-                    
-                    <Setter Property="HorizontalAlignment" Value="Left" />
-                 </Style>
-                
-            </ListView.Resources>
-            <ListView.View>
-                <GridView >
-                    
-                    <GridViewColumn Header="Age" DisplayMemberBinding="{Binding Path=age}"/>
-                    <GridViewColumn Header="Employee Name" DisplayMemberBinding="{Binding Path=name}"/>
-                    <GridViewColumn Header="Salary" DisplayMemberBinding="{Binding Path=phone}"/>
-                </GridView>
-            </ListView.View>
-       
-        </ListView> 
-        <Button Content="Show" HorizontalAlignment="Left" Margin="336,298,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Show" HorizontalAlignment="Left" Margin="560,256,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <DataGrid x:Name="admin_daily_accounting_data_grid" HorizontalAlignment="Left" Margin="23,25,0,0" VerticalAlignment="Top" Height="170" Width="612"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="189" Margin="23,21,0,0" VerticalAlignment="Top" Width="612"/>
     </Grid>
 </UserControl>
 

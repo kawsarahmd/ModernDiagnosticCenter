@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SQLite;
+using System.Collections;
+using System.IO;
 
 namespace ModernDiagnosticCenter.Pages
 {
@@ -20,10 +22,12 @@ namespace ModernDiagnosticCenter.Pages
     /// Interaction logic for Home.xaml
     /// </summary>
     /// 
+
+   //private int count = 0;
     
     public partial class Home : UserControl
     {
-        
+        private ArrayList data = new ArrayList();
        
         public Home()
         {
@@ -64,29 +68,49 @@ namespace ModernDiagnosticCenter.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
+            string Name = name_textfield.Text;
+            string Age = age_textbox.Text;
+            string DocName = doctor_textfield.Text;
+            string Phone = phone_textbox.Text;
+
+            if (string.IsNullOrWhiteSpace(Name) || Name.Any(Char.IsDigit))
+            {
+                MessageBox.Show("Please enter your Name correctly");
+                name_textfield.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(Age) || Age.All(c => Char.IsNumber(c)))
+            {
+                MessageBox.Show("Please enter your age correctly");
+                age_textbox.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(DocName) || DocName.Any(Char.IsDigit))
+            {
+                MessageBox.Show("Please enter your Doctor Name correctly");
+                doctor_textfield.Focus();
+                return;
+
+            }
+            if (string.IsNullOrWhiteSpace(Phone) || !Phone.Any(Char.IsDigit))
+            {
+                MessageBox.Show("Please enter your Phone No correctly");
+                phone_textbox.Focus();
+                return;
+            }
+
             try
             {
                 
-               // PrintPage obj = print_page();
-                PrintPage obj = new PrintPage();
 
-                obj.print_name.Text = name_textfield.Text;
-                obj.print_age.Text = age_textbox.Text;
-                obj.print_date.Text = DateTime.Now.ToString("dd/MM/yyyy");
-                obj.print_time.Text = DateTime.Now.ToString("hh:mm:ss tt");
-                obj.print_refd_by.Text = doctor_textfield.Text;
-                obj.print_delivery_date.Text = home_datepicker.Text;
-                obj.print_phone_no.Text = phone_textbox.Text;
-                obj.print_dayofweek.Text = DateTime.Today.DayOfWeek.ToString();
-               //obj.print_test_textblock.Text = name_textfield.Text;
-                obj.print_sex_textblock.Text = home_sex_combobox.Text;
+                MessageBoxResult result = MessageBox.Show("Do You want to print?", "MDC", MessageBoxButton.OKCancel);
 
-
-               // PrinterWithScaling(obj);
-                obj.Show();
-                obj.Close();
-                printPage2(obj);
-                SaveInDatabase();
+                if (MessageBoxResult.OK == result)
+                { printAllInfoAndSaveInDatabase();
+                // to clear Output.txt
+                  using (StreamWriter obj = new StreamWriter("output.txt", false)) { }
+                }
 
             }catch(Exception ex)
             {
@@ -137,6 +161,45 @@ namespace ModernDiagnosticCenter.Pages
 
 
             
+        }
+
+        private void printAllInfoAndSaveInDatabase()
+        {
+
+            // PrintPage obj = print_page();
+            PrintPage obj = new PrintPage();
+
+            obj.print_name.Text = name_textfield.Text;
+            obj.print_age.Text = age_textbox.Text;
+            obj.print_date.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            obj.print_time.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            obj.print_refd_by.Text = doctor_textfield.Text;
+            obj.print_delivery_date.Text = home_datepicker.Text;
+            obj.print_phone_no.Text = phone_textbox.Text;
+            obj.print_dayofweek.Text = DateTime.Today.DayOfWeek.ToString();
+            //obj.print_test_textblock.Text = name_textfield.Text;
+            obj.print_sex_textblock.Text = home_sex_combobox.Text;
+            //test name and price
+            obj.print_test_name_1.Text = combo_box.Text;
+            obj.print_amount_1.Text = test_cost_textfield.Text;
+
+            obj.print_test_name_2.Text = combo_box.Text;
+            obj.print_amount_2.Text = test_cost_textfield.Text;
+
+            obj.print_test_name_3.Text = combo_box.Text;
+            obj.print_amount_3.Text = test_cost_textfield.Text;
+
+            obj.print_test_name_4.Text = combo_box.Text;
+            obj.print_amount_4.Text = test_cost_textfield.Text;
+
+            obj.print_test_name_5.Text = combo_box.Text;
+            obj.print_amount_5.Text = test_cost_textfield.Text;
+
+            // PrinterWithScaling(obj);
+            obj.Show();
+            obj.Close();
+            printPage2(obj);
+            SaveInDatabase();
         }
 
         private static void printPage2(PrintPage obj)
@@ -266,9 +329,39 @@ namespace ModernDiagnosticCenter.Pages
             combo_box.SelectedIndex = 0;*/
         }
 
+        
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            string[] contents = new string[3]
+
+            
+            MessageBoxResult result =  MessageBox.Show("Do you want to add this test?","MDC",MessageBoxButton.OKCancel);
+
+
+            if (MessageBoxResult.OK == result)
+            {
+                using (StreamWriter obj = new StreamWriter("output.txt", true))
+                {
+                    
+                    //count++;
+                    obj.WriteLine(combo_box.Text);
+                    obj.WriteLine(test_cost_textfield.Text);
+                    obj.WriteLine(due_textfield.Text);
+                    obj.WriteLine(discount_textfield.Text);
+                    obj.WriteLine(paid_textbox.Text);
+
+
+
+
+                }
+
+            }
+            
+
+            //foreach (var i in File.ReadAllLines("output.txt"))
+               // MessageBox.Show(i);
+            
+            /*string[] contents = new string[3]
             {
                name_textfield.Text,
                 //age_textbox.Text,
@@ -276,13 +369,23 @@ namespace ModernDiagnosticCenter.Pages
                 combo_box.Text,
                 ""
                 
-            };
+            };*/
 
-            /*
-            foreach (string content in contents)
+
+           // data.Add();
+
+            //home_list_view.Items.Add("hello");
+            //home_list_view.ItemsSource = data;
+
+           // ArrayList data = new ArrayList();
+           /* data.Add("hello");
+            data.Add("world");
+            home_listbox_for_testname.ItemsSource = data;*/
+            
+            /*foreach (string content in contents)
             {
-                //home_listbox
-               /* bool isValid = true;
+                home_listbox;
+                bool isValid = true;
                 foreach (string item in home_listbox.Items)
                 {
                     if (item == content)
@@ -294,9 +397,10 @@ namespace ModernDiagnosticCenter.Pages
 
                 if (isValid)
                     home_listbox.Items.Add(content);
-            } */
+            } 
 
-           // home_datagrid.Items.Add(contents);
+            home_datagrid.Items.Add(contents);
+             * */
 
         }
 

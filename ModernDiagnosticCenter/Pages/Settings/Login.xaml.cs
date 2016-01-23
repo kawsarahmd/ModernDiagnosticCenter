@@ -42,9 +42,13 @@ namespace ModernDiagnosticCenter.Pages.Settings
                 SQLiteDataReader dr = create_command.ExecuteReader();
 
                 int count = 0;
+               // dr.
+                
 
                 while(dr.Read())
                 {
+                    string s = dr.GetString(0);
+                    MessageBox.Show("Hello " + s);
                     count++;
                 }
                 if(count==1)

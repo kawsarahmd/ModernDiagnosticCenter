@@ -152,6 +152,7 @@ namespace ModernDiagnosticCenter.Admin
             try
             {
                 sqlite_connection.Open();
+                
                 string query = "select * from test_name where test_name='" + admin_test_name_combobox_update.Text + "'";
 
                 SQLiteCommand create_command = new SQLiteCommand(query, sqlite_connection);
@@ -177,6 +178,12 @@ namespace ModernDiagnosticCenter.Admin
         {
             fill_combobox();
             fillPrice();
+        }
+
+        private void Button_Click_Update(object sender, RoutedEventArgs e)
+        {
+            
+
         }
     }
 }

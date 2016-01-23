@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="700">
     <Grid Style="{StaticResource ContentRoot}">
         <Label Content="Test Name" HorizontalAlignment="Left" Margin="140,43,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="406,99,0,0" VerticalAlignment="Top" Width="91" FontWeight="Bold" Click="Button_Click_1"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="406,99,0,0" VerticalAlignment="Top" Width="91" FontWeight="Bold" Click="Button_Click_Update"/>
         <Label Content="Price" HorizontalAlignment="Left" Margin="171,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.413,-0.875" FontWeight="Bold"/>
         <Label Content="Test Name" HorizontalAlignment="Left" Margin="142,196,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.347,0.643" FontWeight="Bold"/>
         <Label Content="Price" HorizontalAlignment="Left" Margin="173,223,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.448,-0.653" FontWeight="Bold"/>

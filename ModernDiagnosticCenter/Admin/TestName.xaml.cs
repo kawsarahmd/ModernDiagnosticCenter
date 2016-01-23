@@ -177,12 +177,33 @@ namespace ModernDiagnosticCenter.Admin
         private void admin_test_name_combobox_update_GotFocus(object sender, RoutedEventArgs e)
         {
             fill_combobox();
-            fillPrice();
+            //fillPrice();
         }
 
         private void Button_Click_Update(object sender, RoutedEventArgs e)
         {
-            
+            string dbConnectionString = @"Data Source=patient.db;Version=3;";
+            SQLiteConnection sqlite_connection = new SQLiteConnection(dbConnectionString);
+
+            try
+            {
+                sqlite_connection.Open();
+
+                //string query = "select * from test_name where test_name='" + admin_test_name_combobox_update.Text + "'";
+                int price = Int32.Parse(admin_price_update.Text);
+                string query = "UPDATE test_name SET test_price = "+price+" WHERE test_name = '"+admin_test_name_combobox_update.Text+"'";
+
+                SQLiteCommand create_command = new SQLiteCommand(query, sqlite_connection);
+                create_command.ExecuteNonQuery();
+
+                MessageBox.Show("Price Updated to " + price + "!!");
+
+                sqlite_connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }

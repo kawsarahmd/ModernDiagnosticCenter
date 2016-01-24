@@ -167,6 +167,13 @@ namespace ModernDiagnosticCenter.Pages
         private void printAllInfoAndSaveInDatabase()
         {
 
+            if(testCount == 0)
+            {
+
+                MessageBox.Show("You didn't add any test yet","MDC",MessageBoxButton.OK,MessageBoxImage.Error);
+                return;
+            }
+
             // PrintPage obj = print_page();
             PrintPage obj = new PrintPage();
 
@@ -180,8 +187,9 @@ namespace ModernDiagnosticCenter.Pages
             obj.print_dayofweek.Text = DateTime.Today.DayOfWeek.ToString();
             //obj.print_test_textblock.Text = name_textfield.Text;
             obj.print_sex_textblock.Text = home_sex_combobox.Text;
+            
             //test name and price
-            obj.print_test_name_1.Text = combo_box.Text;
+            /*obj.print_test_name_1.Text = combo_box.Text;
             obj.print_amount_1.Text = test_cost_textfield.Text;
 
             obj.print_test_name_2.Text = combo_box.Text;
@@ -195,6 +203,32 @@ namespace ModernDiagnosticCenter.Pages
 
             obj.print_test_name_5.Text = combo_box.Text;
             obj.print_amount_5.Text = test_cost_textfield.Text;
+            */
+
+
+            //all test information for printing
+           
+            TextBlock[] printSerialNo = { obj.print_no_1, obj.print_no_2, obj.print_no_3, obj.print_no_4, obj.print_no_5, obj.print_no_6, obj.print_no_7, obj.print_no_8, obj.print_no_9, obj.print_no_10 };
+            TextBlock[] printTestName = { obj.print_test_name_1, obj.print_test_name_2, obj.print_test_name_3, obj.print_test_name_4, obj.print_test_name_5, obj.print_test_name_6, obj.print_test_name_7, obj.print_test_name_8, obj.print_test_name_9, obj.print_test_name_10};
+            TextBlock[] printTestPrice = { obj.print_amount_1, obj.print_amount_2, obj.print_amount_3, obj.print_amount_4, obj.print_amount_5, obj.print_amount_6, obj.print_amount_7, obj.print_amount_8, obj.print_amount_9, obj.print_amount_10};
+            //file read from output.txt
+            int index = 0;
+            string line;
+            using (StreamReader file = new StreamReader("output.txt"))
+                //while((line = file.ReadLine()) != null )
+                for (int i = 0; i < testCount; i++ )
+                {
+                    printSerialNo[i].Text = (i + 1).ToString();
+                    printTestName[i].Text = file.ReadLine(); // test name read from file
+                    //line = file.ReadLine();// read test cost
+                    printTestPrice[i].Text = file.ReadLine();
+
+                    //dummy line
+                    line = file.ReadLine();
+                    line = file.ReadLine();
+                    line = file.ReadLine();
+                    //index++;
+                }
 
             // PrinterWithScaling(obj);
             obj.Show();
@@ -338,6 +372,7 @@ namespace ModernDiagnosticCenter.Pages
             if(testCount >= 10 )
             {
                 MessageBox.Show("Already 10 test has been added\nyou can't add more test", "MDC", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
 
             string s = testCount.ToString();

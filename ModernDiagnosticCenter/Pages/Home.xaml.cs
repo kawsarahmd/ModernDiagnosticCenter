@@ -110,6 +110,7 @@ namespace ModernDiagnosticCenter.Pages
                 { printAllInfoAndSaveInDatabase();
                 // to clear Output.txt
                   using (StreamWriter obj = new StreamWriter("output.txt", false)) { }
+                  testCount = 0;
                 }
 
             }catch(Exception ex)
@@ -329,14 +330,19 @@ namespace ModernDiagnosticCenter.Pages
             combo_box.SelectedIndex = 0;*/
         }
 
-        
+        int testCount = 0;
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
             
-            MessageBoxResult result =  MessageBox.Show("Do you want to add this test?","MDC",MessageBoxButton.OKCancel);
+            if(testCount >= 10 )
+            {
+                MessageBox.Show("Already 10 test has been added\nyou can't add more test", "MDC", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
+            string s = testCount.ToString();
+            MessageBoxResult result =  MessageBox.Show("Do you want to add this test?","MDC",MessageBoxButton.OKCancel);
+            //MessageBox.Show(s);
 
             if (MessageBoxResult.OK == result)
             {
@@ -344,6 +350,7 @@ namespace ModernDiagnosticCenter.Pages
                 {
                     
                     //count++;
+                    testCount++;
                     obj.WriteLine(combo_box.Text);
                     obj.WriteLine(test_cost_textfield.Text);
                     obj.WriteLine(due_textfield.Text);

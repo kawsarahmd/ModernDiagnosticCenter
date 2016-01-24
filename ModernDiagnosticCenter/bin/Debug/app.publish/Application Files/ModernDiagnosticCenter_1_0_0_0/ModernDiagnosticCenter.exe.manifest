@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="ModernDiagnosticCenter.exe" version="1.0.0.0" publicKeyToken="b76c77d10f65b2c9" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="ModernDiagnosticCenter" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="ModernDiagnosticCenter.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FirstFloor.ModernUI.dll" size="232960">
+      <assemblyIdentity name="FirstFloor.ModernUI" version="1.0.6.0" publicKeyToken="2D21EC3CD074C59A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>yHO+RH5OEqN5bFepHBS0Nly9wXk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Windows.Shell.dll" size="167808">
+      <assemblyIdentity name="Microsoft.Windows.Shell" version="3.5.41019.1" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>S66efBtmPeGHach1D6NpPm/2B8k=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ModernDiagnosticCenter.exe" size="81920">
+      <assemblyIdentity name="ModernDiagnosticCenter" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>k7sTbbnkXY8kRp+4dfprZmTMbqI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.dll" size="904704">
+      <assemblyIdentity name="System.Data.SQLite" version="1.0.66.0" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>EFF0T2VKbSBZCXD5M14e8kbw+mc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="ModernDiagnosticCenter.exe.config" size="192">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Np4jzJ1ZjfqlcLKgUaDzo9aSb7E=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=ASUS-PC\ASUS" issuerKeyHash="fcd956ef717c3c5bec93b0a4aa5665200d2132b8" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>KAC0Kr7dw4FV2Xa6UQlIWuv0mN4=</DigestValue></Reference></SignedInfo><SignatureValue>CA4wqd93OTqP5HJRAJ065wRuL0YhId7Dw+Xwkt7FvQ2Gsr1FvWDVP84icHn4k3ayYn5d5FjiVQ2hy+EM7A7CcIe/KdyuWodpddPaCSqG6EwkmZYNSUPxCaWmtm566lepD9Og4FbizrUz90SbUDqznHlu5JhZGaQCkEdIhm1pJ/c=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>o6qub6gfd/HkqQMCy3KpQEDLC0QZqcg3Srz4zbBrvzVOG17oMAJOfyX7FIjbXMZOiMXfLA9dGr17opF+eLA5+t7/6XFpGmflKeYJga54D9zEvF9aP/YMkiwl8JQZ62JloDFVzT119dZ4gMfA3DKWA1nc5lURxoUydfg8nu9vciE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="de98f4eb5a480951ba76d95581c3ddbe2ab40028" Description="" Url=""><as:assemblyIdentity name="ModernDiagnosticCenter.exe" version="1.0.0.0" publicKeyToken="b76c77d10f65b2c9" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=ASUS-PC\ASUS</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>NfzIORBzhrERYSRTvpspUayFF64=</DigestValue></Reference></SignedInfo><SignatureValue>mUOhKom2KzSXoMQAlej+oq5jGcaFKvZAMKtZMBXC26YDo3uWjMpSTHiW4qwhopGTSaoIVH8GRmbADd6wkGfLbq8t5j+p0YHVMZATXkgYTMkGZDq3PCbUG+Zn9pI1j9RsbGI8V2f98jqmP+xcC3mFlaBJ9CP6Tgg8Yq0v6g/JSoQ=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>o6qub6gfd/HkqQMCy3KpQEDLC0QZqcg3Srz4zbBrvzVOG17oMAJOfyX7FIjbXMZOiMXfLA9dGr17opF+eLA5+t7/6XFpGmflKeYJga54D9zEvF9aP/YMkiwl8JQZ62JloDFVzT119dZ4gMfA3DKWA1nc5lURxoUydfg8nu9vciE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIByTCCATKgAwIBAgIQT7mjZwnzd7lCS5HYuVFZXzANBgkqhkiG9w0BAQUFADAjMSEwHwYDVQQDHhgAQQBTAFUAUwAtAFAAQwBcAEEAUwBVAFMwHhcNMTUwNzIxMDc1ODMwWhcNMTYwNzIwMTM1ODMwWjAjMSEwHwYDVQQDHhgAQQBTAFUAUwAtAFAAQwBcAEEAUwBVAFMwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAKOqrm+oH3fx5KkDAstyqUBAywtEGanIN0q8+M2wa781Thte6DACTn8l+xSI21zGTojF3ywPXRq9e6KRfniwOfre/+lxaRpn5SnmCYGueA/cxLxfWj/2DJIsJfCUGetiZaAxVc09dfXWeIDHwNwylgNZ3OZVEcaFMnX4PJ7vb3IhAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEASnzfjPM8eCjxGOniFUljcA6n4EClXgjV/OITwuHDLrov4kju+mxN+1hSq7Ay3sNnQjXDNB0d86dOQZBKzKWimgACZecfZIOuplFJs4HwWlm42yIelXbWAs8sQSf8n1mCJui/o5z9mKHZjzibswj0dLRFRUEdK9pWu/NrChSn1XU=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

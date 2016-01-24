@@ -13,7 +13,7 @@
         <Label Content="Test Name" HorizontalAlignment="Left" Margin="142,196,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.347,0.643" FontWeight="Bold"/>
         <Label Content="Price" HorizontalAlignment="Left" Margin="173,223,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.448,-0.653" FontWeight="Bold"/>
         <Button x:Name="admin_add" Content="Add" HorizontalAlignment="Left" Margin="406,250,0,0" VerticalAlignment="Top" Width="91" FontWeight="Bold" Click="Button_Click_2"/>
-        <ComboBox x:Name="admin_test_name_combobox_update" HorizontalAlignment="Left" Margin="226,43,0,0" VerticalAlignment="Top" Width="271" GotFocus="admin_test_name_combobox_update_GotFocus"/>
+        <ComboBox x:Name="admin_test_name_combobox_update" HorizontalAlignment="Left" Margin="226,43,0,0" VerticalAlignment="Top" Width="271" GotFocus="admin_test_name_combobox_update_GotFocus" SelectionChanged="admin_test_name_combobox_update_SelectionChanged_1"/>
         <Label Content="Test Name" HorizontalAlignment="Left" Margin="142,325,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <ComboBox x:Name="admin_test_name_combobox_remove" HorizontalAlignment="Left" Margin="226,325,0,0" VerticalAlignment="Top" Width="271" GotFocus="admin_test_name_combobox_remove_GotFocus"/>
         <Button x:Name="admin_remove_test_button" Content="Remove" HorizontalAlignment="Left" Margin="406,352,0,0" VerticalAlignment="Top" Width="91" FontWeight="Bold" Click="admin_remove_test_button_Click"/>

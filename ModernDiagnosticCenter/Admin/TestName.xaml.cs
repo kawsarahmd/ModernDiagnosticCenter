@@ -291,5 +291,10 @@ namespace ModernDiagnosticCenter.Admin
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void admin_test_name_combobox_update_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

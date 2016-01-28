@@ -173,3 +173,10 @@ C:\Users\kawsar\Documents\Visual Studio 2013\Projects\ModernDiagnosticCenter\Mod
 C:\Users\kawsar\Documents\Visual Studio 2013\Projects\ModernDiagnosticCenter\ModernDiagnosticCenter\obj\Debug\ModernDiagnosticCenter.g.resources
 C:\Users\kawsar\Documents\Visual Studio 2013\Projects\ModernDiagnosticCenter\ModernDiagnosticCenter\obj\Debug\ModernDiagnosticCenter.exe.manifest
 C:\Users\kawsar\Documents\Visual Studio 2013\Projects\ModernDiagnosticCenter\ModernDiagnosticCenter\obj\Debug\ModernDiagnosticCenter.application
+C:\Users\kawsar\Documents\Visual Studio 2013\Projects\ModernDiagnosticCenter\ModernDiagnosticCenter\bin\Debug\System.Data.SQLite.dll
+C:\Users\kawsar\Documents\Visual Studio 2013\Projects\ModernDiagnosticCenter\ModernDiagnosticCenter\bin\Debug\EntityFramework.dll
+C:\Users\kawsar\Documents\Visual Studio 2013\Projects\ModernDiagnosticCenter\ModernDiagnosticCenter\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kawsar\Documents\Visual Studio 2013\Projects\ModernDiagnosticCenter\ModernDiagnosticCenter\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\kawsar\Documents\Visual Studio 2013\Projects\ModernDiagnosticCenter\ModernDiagnosticCenter\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\kawsar\Documents\Visual Studio 2013\Projects\ModernDiagnosticCenter\ModernDiagnosticCenter\bin\Debug\EntityFramework.xml
+C:\Users\kawsar\Documents\Visual Studio 2013\Projects\ModernDiagnosticCenter\ModernDiagnosticCenter\bin\Debug\EntityFramework.SqlServer.xml

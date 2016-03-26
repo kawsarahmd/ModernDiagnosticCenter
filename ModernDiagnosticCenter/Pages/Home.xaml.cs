@@ -33,6 +33,7 @@ namespace ModernDiagnosticCenter.Pages
         private int sumDiscount = 0;
         private int sumDue = 0;
         private int sumPaid = 0;
+        private int netTestCost = 0;
        
         public Home()
         {
@@ -121,7 +122,7 @@ namespace ModernDiagnosticCenter.Pages
                 // to clear Output.txt
                   using (StreamWriter obj = new StreamWriter("output.txt", false)) { }
                   testCount = 0;
-
+                  netTestCost = 0;
                    
                   
                 }
@@ -501,38 +502,39 @@ namespace ModernDiagnosticCenter.Pages
                 test_cost_textfield.Focus();
                 return;
             }
-            if (string.IsNullOrWhiteSpace(Discount) || !Discount.Any(Char.IsDigit))
-            {
-                MessageBox.Show("Please enter your Discount field correctly");
+           
+            //if (string.IsNullOrWhiteSpace(Discount) || !Discount.Any(Char.IsDigit))
+            //{
+            //    MessageBox.Show("Please enter your Discount field correctly");
                
-                discount_textfield.Focus();
-                return;
+            //    discount_textfield.Focus();
+            //    return;
 
-            }
-            if (string.IsNullOrWhiteSpace(Due) || !Due.Any(Char.IsDigit))
-            {
-                MessageBox.Show("Please enter your Due field correctly");
+            //}
+            //if (string.IsNullOrWhiteSpace(Due) || !Due.Any(Char.IsDigit))
+            //{
+            //    MessageBox.Show("Please enter your Due field correctly");
                 
-                due_textfield.Focus();
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(Paid) || !Paid.Any(Char.IsDigit))
-            {
-                MessageBox.Show("Please enter your Paid field correctly");
+            //    due_textfield.Focus();
+            //    return;
+            //}
+            //if (string.IsNullOrWhiteSpace(Paid) || !Paid.Any(Char.IsDigit))
+            //{
+            //    MessageBox.Show("Please enter your Paid field correctly");
               
-                paid_textbox.Focus();
-                return;
-            }
+            //    paid_textbox.Focus();
+            //    return;
+            //}
 
 
 
             //Checking paid = due + discount + test cost
-            if (int.Parse(TestCost) != (int.Parse(Due) + int.Parse(Discount) + int.Parse(Paid)))
-            {
-                MessageBox.Show("Please Input Test Cost, Due cost, Discount Cost and Paid Cost Correctly!!");
-                return;
+            //if (int.Parse(TestCost) != (int.Parse(Due) + int.Parse(Discount) + int.Parse(Paid)))
+            //{
+            //    MessageBox.Show("Please Input Test Cost, Due cost, Discount Cost and Paid Cost Correctly!!");
+            //    return;
                     
-            }
+            //}
 
             string s = testCount.ToString();
             MessageBoxResult result =  MessageBox.Show("Do you want to add this test?","MDC",MessageBoxButton.OKCancel);
@@ -551,11 +553,15 @@ namespace ModernDiagnosticCenter.Pages
                     obj.WriteLine(discount_textfield.Text);
                     obj.WriteLine(paid_textbox.Text);
 
+                    int testCost = int.Parse(test_cost_textfield.Text);
+                    netTestCost += testCost;
+
+
                     combo_box.Text = "";
                     test_cost_textfield.Text = "";
-                    due_textfield.Text = "";
-                    discount_textfield.Text = "";
-                    paid_textbox.Text = "";
+                    due_textfield.Text = "0";
+                    discount_textfield.Text = "0";
+                    paid_textbox.Text = netTestCost.ToString();
                   
 
 
@@ -634,9 +640,10 @@ namespace ModernDiagnosticCenter.Pages
                     
                 }
 
-                discount_textfield.Text = "0";
-                paid_textbox.Text = test_cost_textfield.Text;
-                due_textfield.Text = "0";
+                //for test change price update
+                //discount_textfield.Text = "0";
+                //paid_textbox.Text = netTestCost.ToString();
+                //due_textfield.Text = "0";
 
                 sqlite_connection.Close();
             }
@@ -668,7 +675,7 @@ namespace ModernDiagnosticCenter.Pages
                 }
 
                 discount_textfield.Text = "0";
-                paid_textbox.Text = test_cost_textfield.Text;
+                //paid_textbox.Text = test_cost_textfield.Text;
                 due_textfield.Text = "0";
 
 

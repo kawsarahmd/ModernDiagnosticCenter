@@ -8,7 +8,7 @@
     <Grid Name="printPanel" 
           
         Style="{StaticResource ContentRoot}" >
-        <Button Content="Print" HorizontalAlignment="Left" Margin="469,395,0,0" VerticalAlignment="Top" Width="132" FontWeight="Bold" Click="Button_Click" IsDefault="True" FontFamily="Times New Roman" />
+        <Button Content="Print" HorizontalAlignment="Left" Margin="501,395,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" Click="Button_Click" IsDefault="True" FontFamily="Times New Roman" />
         <Label Content="Name" HorizontalAlignment="Left" Margin="140,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.606,0.062" Width="42" HorizontalContentAlignment="Right" FontFamily="Times New Roman" FontWeight="Bold"/>
         <Label Content="Age" HorizontalAlignment="Left" Margin="151,95,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="28" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
         <Label Content="Refr. Doctor" HorizontalAlignment="Left" Margin="95,126,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="87" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
@@ -20,16 +20,16 @@
         <ComboBox HorizontalAlignment="Left" Margin="203,240,0,0" VerticalAlignment="Top" Width="398"  x:Name="combo_box" Loaded="combo_box_Loaded" SelectionChanged="combo_box_SelectionChanged" GotFocus="combo_box_GotFocus" IsEditable="True" StaysOpenOnEdit="True"/>
         <Label Content="Test Name" HorizontalAlignment="Left" Margin="107,240,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="75" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
         <TextBox x:Name="test_cost_textfield" HorizontalAlignment="Left" Height="23" Margin="203,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
-        <TextBox x:Name="discount_textfield" HorizontalAlignment="Left" Height="23" Margin="451,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="due_textfield" HorizontalAlignment="Left" Height="23" Margin="203,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
+        <TextBox x:Name="discount_textfield" HorizontalAlignment="Left" Height="23" Margin="455,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
+        <TextBox x:Name="due_textfield" HorizontalAlignment="Left" Height="23" Margin="455,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
         <Label Content="Test Cost" HorizontalAlignment="Left" Margin="119,270,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="64" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
-        <Label Content="Discount" HorizontalAlignment="Left" Margin="369,270,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="64" FontFamily="Times New Roman"/>
-        <Label Content="Due" HorizontalAlignment="Left" Margin="151,302,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="29" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
-        <DatePicker x:Name="home_datepicker" HorizontalAlignment="Left" Margin="203,331,0,0" VerticalAlignment="Top" Width="145" SelectedDateFormat="Short"/>
-        <Label Content="Delivery date" HorizontalAlignment="Left" Margin="88,336,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="95" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="302,395,0,0" VerticalAlignment="Top" Width="131" Click="Button_Click_1" FontWeight="Bold" FontFamily="Times New Roman"/>
-        <Label Content="Paid" HorizontalAlignment="Left" Margin="402,299,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="31" FontFamily="Times New Roman"/>
-        <TextBox x:Name="paid_textbox" HorizontalAlignment="Left" Height="23" Margin="451,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
+        <Label Content="Discount" HorizontalAlignment="Left" Margin="382,331,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="64" FontFamily="Times New Roman"/>
+        <Label Content="Due" HorizontalAlignment="Left" Margin="392,305,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="29" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
+        <DatePicker x:Name="home_datepicker" HorizontalAlignment="Left" Margin="203,292,0,0" VerticalAlignment="Top" Width="145" SelectedDateFormat="Short"/>
+        <Label Content="Delivery date" HorizontalAlignment="Left" Margin="87,299,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="95" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="203,395,0,0" VerticalAlignment="Top" Width="96" Click="Button_Click_1" FontWeight="Bold" FontFamily="Times New Roman"/>
+        <Label Content="Paid" HorizontalAlignment="Left" Margin="402,355,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="31" FontFamily="Times New Roman"/>
+        <TextBox x:Name="paid_textbox" HorizontalAlignment="Left" Height="23" Margin="455,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" />
         <Label Content="Sex" HorizontalAlignment="Left" Margin="153,158,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="26" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
         <ComboBox x:Name="home_sex_combobox" HorizontalAlignment="Left" Margin="203,158,0,0" VerticalAlignment="Top" Width="398" Loaded="home_sex_combobox_Loaded"/>
         <Label Content="Patient Information" HorizontalAlignment="Left" Margin="330,28,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="0.7,-0.017"/>
@@ -40,5 +40,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="350,395,0,0" VerticalAlignment="Top" Width="96" RenderTransformOrigin="-0.107,0.115" Height="24"/>
     </Grid>
 </UserControl>

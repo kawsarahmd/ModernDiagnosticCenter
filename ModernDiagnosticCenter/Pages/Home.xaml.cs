@@ -28,6 +28,11 @@ namespace ModernDiagnosticCenter.Pages
     public partial class Home : UserControl
     {
         private ArrayList data = new ArrayList();
+        private int index = 0;
+        private int sumTestCost = 0;
+        private int sumDiscount = 0;
+        private int sumDue = 0;
+        private int sumPaid = 0;
        
         public Home()
         {
@@ -68,6 +73,7 @@ namespace ModernDiagnosticCenter.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
 
             string Name = name_textfield.Text;
             string Age = age_textbox.Text;
@@ -173,6 +179,7 @@ namespace ModernDiagnosticCenter.Pages
 
         private int printAllInfoAndSaveInDatabase()
         {
+            
 
             if(testCount == 0)
             {
@@ -219,25 +226,64 @@ namespace ModernDiagnosticCenter.Pages
             TextBlock[] printTestName = { obj.print_test_name_1, obj.print_test_name_2, obj.print_test_name_3, obj.print_test_name_4, obj.print_test_name_5, obj.print_test_name_6, obj.print_test_name_7, obj.print_test_name_8, obj.print_test_name_9, obj.print_test_name_10};
             TextBlock[] printTestPrice = { obj.print_amount_1, obj.print_amount_2, obj.print_amount_3, obj.print_amount_4, obj.print_amount_5, obj.print_amount_6, obj.print_amount_7, obj.print_amount_8, obj.print_amount_9, obj.print_amount_10};
             //file read from output.txt
-            int index = 0;
+        
+
             string line;
             using (StreamReader file = new StreamReader("output.txt"))
                 //while((line = file.ReadLine()) != null )
                 for (int i = 0; i < testCount; i++ )
                 {
+
+                    int cost, due, discount, paid;
+
                     printSerialNo[i].Text = (i + 1).ToString();
                     printTestName[i].Text = file.ReadLine(); // test name read from file
-                    //line = file.ReadLine();// read test cost
-                    printTestPrice[i].Text = file.ReadLine();
+                    
+                    //read test cost as string and convert it to int and save it for calculation
+                    line = file.ReadLine();// read test cost
+                    cost = int.Parse(line);
+                    printTestPrice[i].Text = line;
+
+                    //read due cost as string and convert it to int and save it for calculation
+                    line = file.ReadLine();
+                    due = int.Parse(line);
+
+                    line = file.ReadLine();
+                    discount = int.Parse(line);
+
+                    line = file.ReadLine();
+                    paid = int.Parse(line);
+
+
+                    sumTestCost += cost;
+                    sumDue += due;
+                    sumDiscount += discount;
+                    sumPaid += paid;
+                    
+                    //This is file data serial
+                    //combo_box.Text = "";
+                    //test_cost_textfield.Text = "";
+                    //due_textfield.Text = "";
+                    //discount_textfield.Text = "";
+                    //paid_textbox.Text = "";
 
                     //dummy line
-                    line = file.ReadLine();
-                    line = file.ReadLine();
-                    line = file.ReadLine();
+                    //line = file.ReadLine();
+                    //line = file.ReadLine();
+                    //line = file.ReadLine();
                     //index++;
                 }
 
             // PrinterWithScaling(obj);
+
+            obj.print_sub_total.Text = sumTestCost.ToString();
+            obj.print_discount.Text = sumDiscount.ToString();
+
+            int netPayable = sumTestCost - sumDiscount;
+
+            obj.print_net_total.Text = netPayable.ToString();
+            obj.print_ammount_receive.Text = sumPaid.ToString();
+            obj.print_due.Text = sumDue.ToString();
 
             name_textfield.Text = "";
             age_textbox.Text = "";
@@ -249,6 +295,13 @@ namespace ModernDiagnosticCenter.Pages
             obj.Close();
             printPage2(obj);
             SaveInDatabase();
+
+             index = 0;
+             sumTestCost = 0;
+             sumDiscount = 0;
+             sumDue = 0;
+             sumPaid = 0;
+
             return 1;
         }
 
@@ -401,8 +454,7 @@ namespace ModernDiagnosticCenter.Pages
             string Due = due_textfield.Text;
             string Paid = paid_textbox.Text;
 
-
-
+            
 
 
 
@@ -474,7 +526,13 @@ namespace ModernDiagnosticCenter.Pages
 
 
 
-
+            //Checking paid = due + discount + test cost
+            if (int.Parse(TestCost) != (int.Parse(Due) + int.Parse(Discount) + int.Parse(Paid)))
+            {
+                MessageBox.Show("Please Input Test Cost, Due cost, Discount Cost and Paid Cost Correctly!!");
+                return;
+                    
+            }
 
             string s = testCount.ToString();
             MessageBoxResult result =  MessageBox.Show("Do you want to add this test?","MDC",MessageBoxButton.OKCancel);

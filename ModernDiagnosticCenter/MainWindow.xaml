@@ -22,6 +22,15 @@
 
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
+
+        <mui:LinkGroup DisplayName="Other Expenditure" >
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="" Source="/Pages/OtherExpense.xaml" />
+
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        
+        
         <mui:LinkGroup DisplayName="settings" GroupKey="settings">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="" Source="/Pages/SettingsPage.xaml" />

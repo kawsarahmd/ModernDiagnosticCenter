@@ -20,43 +20,44 @@ namespace ModernDiagnosticCenter.Admin
     /// <summary>
        /// Interaction logic for Test.xaml
     /// </summary>
-    public partial class MonthlyAccounting : UserControl
+    public partial class Monthly : UserControl
     {
-        public MonthlyAccounting()
+        public Monthly()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            string dbConnectionString = @"Data Source=patient.db;Version=3;";
-            SQLiteConnection sqlite_connection = new SQLiteConnection(dbConnectionString);
 
-            try
-            {
-                sqlite_connection.Open();
-                string query = "select * from patient_table";
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    string dbConnectionString = @"Data Source=patient.db;Version=3;";
+        //    SQLiteConnection sqlite_connection = new SQLiteConnection(dbConnectionString);
 
-                SQLiteCommand create_command = new SQLiteCommand(query, sqlite_connection);
-                create_command.ExecuteNonQuery();
-                //SQLiteDataReader dr = create_command.ExecuteReader();
+        //    try
+        //    {
+        //        sqlite_connection.Open();
+        //        string query = "select * from patient_table";
 
-                SQLiteDataAdapter dataAdapt = new SQLiteDataAdapter(query, sqlite_connection);
-                //var ds = new DataSet();
+        //        SQLiteCommand create_command = new SQLiteCommand(query, sqlite_connection);
+        //        create_command.ExecuteNonQuery();
+        //        //SQLiteDataReader dr = create_command.ExecuteReader();
 
-                DataTable dt = new DataTable("patient_table");
-                //dataAdapt.Fill(ds,"patient_table");
-                dataAdapt.Fill(dt);
-               // listView1.DataContext = ds.Tables["patient_table"].DefaultView;
-                admin_monthly_accounting_datagrid.ItemsSource = dt.DefaultView ;
-                dataAdapt.Update(dt);
+        //        SQLiteDataAdapter dataAdapt = new SQLiteDataAdapter(query, sqlite_connection);
+        //        //var ds = new DataSet();
 
-                sqlite_connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //        DataTable dt = new DataTable("patient_table");
+        //        //dataAdapt.Fill(ds,"patient_table");
+        //        dataAdapt.Fill(dt);
+        //       // listView1.DataContext = ds.Tables["patient_table"].DefaultView;
+        //        admin_monthly_accounting_datagrid.ItemsSource = dt.DefaultView ;
+        //        dataAdapt.Update(dt);
+
+        //        sqlite_connection.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        //MessageBox.Show(ex.Message);
+        //    }
+        //}
     }
 }

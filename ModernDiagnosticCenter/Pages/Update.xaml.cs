@@ -49,14 +49,16 @@ namespace ModernDiagnosticCenter.Pages
             update_phone_textbox.Text = "";
 
             update_test_cost_textfield.Text = "";
-            update_due_textfield.Text = "";
-            update_paid_textbox.Text = "";
+          //  update_due_textfield.Text = "";
+           // update_paid_textbox.Text = "";
             update_sex_textfield.Text = "";
             update_delivery_date.Text = "";
             update_date.Text = "";
             update_time.Text = "";
             update_doctor_textfield.Text = "";
             update_discount_textfield.Text = "";
+            update_due_textbox.Text = "";
+            update_paid_textfield.Text = "";
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -64,7 +66,8 @@ namespace ModernDiagnosticCenter.Pages
             findBillId();
 
             //after database search query it will focus on DUE filed
-            update_due_textfield.Focus();
+            //update_due_textfield.Focus();
+            update_paid_textfield.Focus();
             
         }
 
@@ -91,8 +94,10 @@ namespace ModernDiagnosticCenter.Pages
                     update_phone_textbox.Text = dr.GetString(3);
 
                     update_test_cost_textfield.Text = dr.GetInt32(4).ToString();
-                    update_due_textfield.Text = dr.GetInt32(5).ToString();
-                    update_paid_textbox.Text = dr.GetInt32(6).ToString();
+                    update_due_textbox.Text = dr.GetInt32(5).ToString();
+                    //update_due_textfield.Text = dr.GetInt32(5).ToString();
+                    //update_paid_textbox.Text = dr.GetInt32(6).ToString();
+                    update_paid_textfield.Text = dr.GetInt32(6).ToString();
                     update_sex_textfield.Text = dr.GetString(7);
                     update_delivery_date.Text = dr.GetString(8);
                     update_date.Text = dr.GetString(10)  ;

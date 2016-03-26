@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ModernDiagnosticCenter.exe" size="86528">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ModernDiagnosticCenter.exe" size="100864">
       <assemblyIdentity name="ModernDiagnosticCenter" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>OUxfOjDzOoGCOHt3pELN9bpgA94=</dsig:DigestValue>
+        <dsig:DigestValue>5hM4GTtP+tJoWn0O6S+slvx34BE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

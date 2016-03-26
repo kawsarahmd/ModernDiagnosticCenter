@@ -48,6 +48,7 @@ namespace ModernDiagnosticCenter.Pages.Settings
                 while(dr.Read())
                 {
                     string s = dr.GetString(0);
+                    
                     MessageBox.Show("Hello " + s);
                     count++;
                 }

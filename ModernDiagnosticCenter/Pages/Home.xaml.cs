@@ -80,7 +80,7 @@ namespace ModernDiagnosticCenter.Pages
                 name_textfield.Focus();
                 return;
             }
-            if (string.IsNullOrWhiteSpace(Age) || Age.All(c => Char.IsNumber(c)))
+            if (string.IsNullOrWhiteSpace(Age) || !Age.Any( Char.IsDigit))
             {
                 MessageBox.Show("Please enter your age correctly");
                 age_textbox.Focus();
@@ -107,10 +107,17 @@ namespace ModernDiagnosticCenter.Pages
                 MessageBoxResult result = MessageBox.Show("Do You want to print?", "MDC", MessageBoxButton.OKCancel);
 
                 if (MessageBoxResult.OK == result)
-                { printAllInfoAndSaveInDatabase();
+                { 
+                    
+                   int flag = printAllInfoAndSaveInDatabase();
+                   if (flag == 0)
+                       return;
                 // to clear Output.txt
                   using (StreamWriter obj = new StreamWriter("output.txt", false)) { }
                   testCount = 0;
+
+                   
+                  
                 }
 
             }catch(Exception ex)
@@ -164,14 +171,14 @@ namespace ModernDiagnosticCenter.Pages
             
         }
 
-        private void printAllInfoAndSaveInDatabase()
+        private int printAllInfoAndSaveInDatabase()
         {
 
             if(testCount == 0)
             {
 
                 MessageBox.Show("You didn't add any test yet","MDC",MessageBoxButton.OK,MessageBoxImage.Error);
-                return;
+                return 0;
             }
 
             // PrintPage obj = print_page();
@@ -231,10 +238,18 @@ namespace ModernDiagnosticCenter.Pages
                 }
 
             // PrinterWithScaling(obj);
+
+            name_textfield.Text = "";
+            age_textbox.Text = "";
+            doctor_textfield.Text = "";
+            phone_textbox.Text = "";
+            home_sex_combobox.Text = "";
+
             obj.Show();
             obj.Close();
             printPage2(obj);
             SaveInDatabase();
+            return 1;
         }
 
         private static void printPage2(PrintPage obj)
@@ -375,6 +390,92 @@ namespace ModernDiagnosticCenter.Pages
                 return;
             }
 
+            string Name = name_textfield.Text;
+            string Age = age_textbox.Text;
+            string DocName = doctor_textfield.Text;
+            string Phone = phone_textbox.Text;
+            
+            string ComboBox = combo_box.Text;
+            string TestCost = test_cost_textfield.Text;
+            string Discount = discount_textfield.Text;
+            string Due = due_textfield.Text;
+            string Paid = paid_textbox.Text;
+
+
+
+
+
+
+
+            if (string.IsNullOrWhiteSpace(Name) || Name.Any(Char.IsDigit))
+            {
+                MessageBox.Show("Please enter your test name correctly");
+                name_textfield.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(Age) || !Age.Any(Char.IsDigit))
+            {
+                MessageBox.Show("Please enter your age correctly");
+                age_textbox.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(DocName) || DocName.Any(Char.IsDigit))
+            {
+                MessageBox.Show("Please enter your Doctor Name correctly");
+                doctor_textfield.Focus();
+                return;
+
+            }
+            if (string.IsNullOrWhiteSpace(Phone) || !Phone.Any(Char.IsDigit))
+            {
+                MessageBox.Show("Please enter your Phone No correctly");
+                phone_textbox.Focus();
+                return;
+            }
+
+
+
+
+
+            if (string.IsNullOrWhiteSpace(ComboBox))
+            {
+                MessageBox.Show("Please enter your Test name correctly");
+                //combo_box.Text.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(TestCost) || !TestCost.Any(Char.IsDigit))
+            {
+                MessageBox.Show("Please enter your Test cost field correctly");
+                test_cost_textfield.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(Discount) || !Discount.Any(Char.IsDigit))
+            {
+                MessageBox.Show("Please enter your Discount field correctly");
+               
+                discount_textfield.Focus();
+                return;
+
+            }
+            if (string.IsNullOrWhiteSpace(Due) || !Due.Any(Char.IsDigit))
+            {
+                MessageBox.Show("Please enter your Due field correctly");
+                
+                due_textfield.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(Paid) || !Paid.Any(Char.IsDigit))
+            {
+                MessageBox.Show("Please enter your Paid field correctly");
+              
+                paid_textbox.Focus();
+                return;
+            }
+
+
+
+
+
             string s = testCount.ToString();
             MessageBoxResult result =  MessageBox.Show("Do you want to add this test?","MDC",MessageBoxButton.OKCancel);
             //MessageBox.Show(s);
@@ -392,7 +493,12 @@ namespace ModernDiagnosticCenter.Pages
                     obj.WriteLine(discount_textfield.Text);
                     obj.WriteLine(paid_textbox.Text);
 
-
+                    combo_box.Text = "";
+                    test_cost_textfield.Text = "";
+                    due_textfield.Text = "";
+                    discount_textfield.Text = "";
+                    paid_textbox.Text = "";
+                  
 
 
                 }
@@ -448,11 +554,13 @@ namespace ModernDiagnosticCenter.Pages
 
         private void combo_box_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            int price;
             string dbConnectionString = @"Data Source=patient.db;Version=3;";
             SQLiteConnection sqlite_connection = new SQLiteConnection(dbConnectionString);
 
             try
             {
+               
                 sqlite_connection.Open();
                 string query = "select * from test_name where test_name='"+combo_box.Text +"'";
 
@@ -463,9 +571,14 @@ namespace ModernDiagnosticCenter.Pages
                 while (dr.Read())
                 {
                     //string name = dr.GetString(2);
-                    int price = dr.GetInt32(2);
+                     price = dr.GetInt32(2);
                     test_cost_textfield.Text = price.ToString();
+                    
                 }
+
+                discount_textfield.Text = "0";
+                paid_textbox.Text = test_cost_textfield.Text;
+                due_textfield.Text = "0";
 
                 sqlite_connection.Close();
             }
@@ -495,6 +608,11 @@ namespace ModernDiagnosticCenter.Pages
                     int price = dr.GetInt32(2);
                     test_cost_textfield.Text = price.ToString();
                 }
+
+                discount_textfield.Text = "0";
+                paid_textbox.Text = test_cost_textfield.Text;
+                due_textfield.Text = "0";
+
 
                 sqlite_connection.Close();
             }

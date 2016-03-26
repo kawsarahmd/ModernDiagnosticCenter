@@ -8,29 +8,29 @@
     <Grid Name="printPanel" 
           
         Style="{StaticResource ContentRoot}" >
-        <Button Content="Print" HorizontalAlignment="Left" Margin="469,395,0,0" VerticalAlignment="Top" Width="132" FontWeight="Bold" Click="Button_Click" IsDefault="True" />
-        <Label Content="Name" HorizontalAlignment="Left" Margin="140,63,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.606,0.062" Width="42" HorizontalContentAlignment="Right"/>
-        <Label Content="Age" HorizontalAlignment="Left" Margin="151,95,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="28" HorizontalContentAlignment="Right"/>
-        <Label Content="Refr. Doctor" HorizontalAlignment="Left" Margin="95,126,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="87" HorizontalContentAlignment="Right"/>
-        <Label Content="Phone" HorizontalAlignment="Left" Margin="133,189,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.444,2" Width="46" HorizontalContentAlignment="Right"/>
+        <Button Content="Print" HorizontalAlignment="Left" Margin="469,395,0,0" VerticalAlignment="Top" Width="132" FontWeight="Bold" Click="Button_Click" IsDefault="True" FontFamily="Times New Roman" />
+        <Label Content="Name" HorizontalAlignment="Left" Margin="140,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.606,0.062" Width="42" HorizontalContentAlignment="Right" FontFamily="Times New Roman" FontWeight="Bold"/>
+        <Label Content="Age" HorizontalAlignment="Left" Margin="151,95,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="28" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
+        <Label Content="Refr. Doctor" HorizontalAlignment="Left" Margin="95,126,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="87" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
+        <Label Content="Phone" HorizontalAlignment="Left" Margin="133,189,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.444,2" Width="46" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
         <TextBox x:Name="name_textfield" HorizontalAlignment="Left" Height="23" Margin="203,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="398"/>
         <TextBox x:Name="age_textbox" HorizontalAlignment="Left" Height="23" Margin="203,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="398"/>
         <TextBox x:Name="doctor_textfield" HorizontalAlignment="Left" Height="23" Margin="203,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="398"/>
         <TextBox x:Name="phone_textbox" HorizontalAlignment="Left" Height="23" Margin="203,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="398"/>
         <ComboBox HorizontalAlignment="Left" Margin="203,240,0,0" VerticalAlignment="Top" Width="398"  x:Name="combo_box" Loaded="combo_box_Loaded" SelectionChanged="combo_box_SelectionChanged" GotFocus="combo_box_GotFocus" IsEditable="True" StaysOpenOnEdit="True"/>
-        <Label Content="Test Name" HorizontalAlignment="Left" Margin="107,240,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="75" HorizontalContentAlignment="Right"/>
+        <Label Content="Test Name" HorizontalAlignment="Left" Margin="107,240,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="75" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
         <TextBox x:Name="test_cost_textfield" HorizontalAlignment="Left" Height="23" Margin="203,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
         <TextBox x:Name="discount_textfield" HorizontalAlignment="Left" Height="23" Margin="451,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBox x:Name="due_textfield" HorizontalAlignment="Left" Height="23" Margin="203,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
-        <Label Content="Test Cost" HorizontalAlignment="Left" Margin="119,270,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="64" HorizontalContentAlignment="Right"/>
-        <Label Content="Discount" HorizontalAlignment="Left" Margin="369,270,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="64"/>
-        <Label Content="Due" HorizontalAlignment="Left" Margin="151,302,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="29" HorizontalContentAlignment="Right"/>
+        <Label Content="Test Cost" HorizontalAlignment="Left" Margin="119,270,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="64" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
+        <Label Content="Discount" HorizontalAlignment="Left" Margin="369,270,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="64" FontFamily="Times New Roman"/>
+        <Label Content="Due" HorizontalAlignment="Left" Margin="151,302,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="29" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
         <DatePicker x:Name="home_datepicker" HorizontalAlignment="Left" Margin="203,331,0,0" VerticalAlignment="Top" Width="145" SelectedDateFormat="Short"/>
-        <Label Content="Delivery date" HorizontalAlignment="Left" Margin="88,336,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="95" HorizontalContentAlignment="Right"/>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="302,395,0,0" VerticalAlignment="Top" Width="131" Click="Button_Click_1" FontWeight="Bold"/>
-        <Label Content="Paid" HorizontalAlignment="Left" Margin="402,299,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="31"/>
+        <Label Content="Delivery date" HorizontalAlignment="Left" Margin="88,336,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="95" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="302,395,0,0" VerticalAlignment="Top" Width="131" Click="Button_Click_1" FontWeight="Bold" FontFamily="Times New Roman"/>
+        <Label Content="Paid" HorizontalAlignment="Left" Margin="402,299,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="31" FontFamily="Times New Roman"/>
         <TextBox x:Name="paid_textbox" HorizontalAlignment="Left" Height="23" Margin="451,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
-        <Label Content="Sex" HorizontalAlignment="Left" Margin="153,158,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="26" HorizontalContentAlignment="Right"/>
+        <Label Content="Sex" HorizontalAlignment="Left" Margin="153,158,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="26" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
         <ComboBox x:Name="home_sex_combobox" HorizontalAlignment="Left" Margin="203,158,0,0" VerticalAlignment="Top" Width="398" Loaded="home_sex_combobox_Loaded"/>
         <Label Content="Patient Information" HorizontalAlignment="Left" Margin="330,28,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="0.7,-0.017"/>
         <ListView x:Name="home_list_view" HorizontalAlignment="Left" Height="259" Margin="701,63,0,0" VerticalAlignment="Top" Width="180">

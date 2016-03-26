@@ -125,8 +125,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Admin\DailyAccounting.xaml.cs">
+      <DependentUpon>DailyAccounting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DoctorPerformance.xaml.cs">
+      <DependentUpon>DoctorPerformance.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Admin\MonthlyAccounting.xaml.cs">
       <DependentUpon>MonthlyAccounting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TestCounting.xaml.cs">
+      <DependentUpon>TestCounting.xaml</DependentUpon>
     </Compile>
     <Compile Include="Admin\TestName.xaml.cs">
       <DependentUpon>TestName.xaml</DependentUpon>
@@ -147,9 +156,21 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Admin\DailyAccounting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\DoctorPerformance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Admin\MonthlyAccounting.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Admin\TestCounting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Admin\TestName.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -183,6 +204,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\OtherExpense.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Update.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -201,6 +226,9 @@
     </Page>
     <Compile Include="AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OtherExpense.xaml.cs">
+      <DependentUpon>OtherExpense.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Update.xaml.cs">
       <DependentUpon>Update.xaml</DependentUpon>

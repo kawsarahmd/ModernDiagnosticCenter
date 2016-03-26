@@ -247,19 +247,19 @@ namespace ModernDiagnosticCenter.Pages
 
                     //read due cost as string and convert it to int and save it for calculation
                     line = file.ReadLine();
-                    due = int.Parse(line);
+                  //  due = int.Parse(line);
 
                     line = file.ReadLine();
-                    discount = int.Parse(line);
+                   // discount = int.Parse(line);
 
                     line = file.ReadLine();
-                    paid = int.Parse(line);
+                  //  paid = int.Parse(line);
 
 
-                    sumTestCost += cost;
-                    sumDue += due;
-                    sumDiscount += discount;
-                    sumPaid += paid;
+                    //sumTestCost += cost;
+                    //sumDue += due;
+                    //sumDiscount += discount;
+                    //sumPaid += paid;
                     
                     //This is file data serial
                     //combo_box.Text = "";
@@ -277,20 +277,38 @@ namespace ModernDiagnosticCenter.Pages
 
             // PrinterWithScaling(obj);
 
-            obj.print_sub_total.Text = sumTestCost.ToString();
-            obj.print_discount.Text = sumDiscount.ToString();
+            //obj.print_sub_total.Text = sumTestCost.ToString();
+            //obj.print_discount.Text = sumDiscount.ToString();
 
-            int netPayable = sumTestCost - sumDiscount;
+
+            obj.print_sub_total.Text =  net_cost_textfield.Text;
+            obj.print_discount.Text =   discount_textfield.Text;
+
+
+
+            //int netPayable = sumTestCost - sumDiscount;
+
+
+            int netPayable = int.Parse(net_cost_textfield.Text) - int.Parse(discount_textfield.Text);
 
             obj.print_net_total.Text = netPayable.ToString();
-            obj.print_ammount_receive.Text = sumPaid.ToString();
-            obj.print_due.Text = sumDue.ToString();
+
+            obj.print_ammount_receive.Text =  paid_textbox.Text;
+
+            //obj.print_due.Text = sumDue.ToString();
+
+            obj.print_due.Text = (netPayable - int.Parse(paid_textbox.Text)).ToString();
 
             name_textfield.Text = "";
             age_textbox.Text = "";
             doctor_textfield.Text = "";
             phone_textbox.Text = "";
             home_sex_combobox.Text = "";
+            combo_box.Text = "";
+            test_cost_textfield.Text = "";
+            net_cost_textfield.Text = "";
+            paid_textbox.Text = "";
+            discount_textfield.Text = "";
 
             obj.Show();
             obj.Close();
@@ -400,7 +418,7 @@ namespace ModernDiagnosticCenter.Pages
             try
             {
                 sqlite_connection.Open();
-                string query = "INSERT INTO patient_table (name,age,phone,cost,due,paid,sex,delivery_date,time,date,doctor)   VALUES('" + this.name_textfield.Text + "','" + this.age_textbox.Text + "','" + this.phone_textbox.Text + "','" + this.test_cost_textfield.Text + "','" + this.due_textfield.Text + "','"  + this.paid_textbox.Text + "','" + this.home_sex_combobox.Text + "','" + this.home_datepicker.Text + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "','" + DateTime.Now.ToString("dd/MM/yyyy") + "','" + this.doctor_textfield.Text + "')";
+                string query = "INSERT INTO patient_table (name,age,phone,cost,due,paid,sex,delivery_date,time,date,doctor)   VALUES('" + this.name_textfield.Text + "','" + this.age_textbox.Text + "','" + this.phone_textbox.Text + "','" + this.test_cost_textfield.Text + "','" + this.net_cost_textfield.Text + "','"  + this.paid_textbox.Text + "','" + this.home_sex_combobox.Text + "','" + this.home_datepicker.Text + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "','" + DateTime.Now.ToString("dd/MM/yyyy") + "','" + this.doctor_textfield.Text + "')";
 
                 SQLiteCommand create_command = new SQLiteCommand(query, sqlite_connection);
                 create_command.ExecuteNonQuery();
@@ -452,7 +470,7 @@ namespace ModernDiagnosticCenter.Pages
             string ComboBox = combo_box.Text;
             string TestCost = test_cost_textfield.Text;
             string Discount = discount_textfield.Text;
-            string Due = due_textfield.Text;
+            string Due =  net_cost_textfield.Text;
             string Paid = paid_textbox.Text;
 
             
@@ -549,7 +567,7 @@ namespace ModernDiagnosticCenter.Pages
                     testCount++;
                     obj.WriteLine(combo_box.Text);
                     obj.WriteLine(test_cost_textfield.Text);
-                    obj.WriteLine(due_textfield.Text);
+                    obj.WriteLine(net_cost_textfield.Text);
                     obj.WriteLine(discount_textfield.Text);
                     obj.WriteLine(paid_textbox.Text);
 
@@ -559,9 +577,10 @@ namespace ModernDiagnosticCenter.Pages
 
                     combo_box.Text = "";
                     test_cost_textfield.Text = "";
-                    due_textfield.Text = "0";
+                    
                     discount_textfield.Text = "0";
                     paid_textbox.Text = netTestCost.ToString();
+                    net_cost_textfield.Text = netTestCost.ToString();
                   
 
 
@@ -676,7 +695,8 @@ namespace ModernDiagnosticCenter.Pages
 
                 discount_textfield.Text = "0";
                 //paid_textbox.Text = test_cost_textfield.Text;
-                due_textfield.Text = "0";
+                
+                
 
 
                 sqlite_connection.Close();

@@ -21,7 +21,7 @@
         <Label Content="Test Name" HorizontalAlignment="Left" Margin="107,240,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="75" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
         <TextBox x:Name="test_cost_textfield" HorizontalAlignment="Left" Height="23" Margin="203,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
         <TextBox x:Name="discount_textfield" HorizontalAlignment="Left" Height="23" Margin="455,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
-        <TextBox x:Name="net_cost_textfield" HorizontalAlignment="Left" Height="23" Margin="455,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
+        <TextBox x:Name="net_cost_textfield" HorizontalAlignment="Left" Height="23" Margin="455,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" IsEnabled="False"/>
         <Label Content="Test Cost" HorizontalAlignment="Left" Margin="119,270,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="64" HorizontalContentAlignment="Right" FontFamily="Times New Roman"/>
         <Label Content="Discount" HorizontalAlignment="Left" Margin="389,333,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="51" FontFamily="Times New Roman"/>
         <DatePicker x:Name="home_datepicker" HorizontalAlignment="Left" Margin="203,292,0,0" VerticalAlignment="Top" Width="145" SelectedDateFormat="Short"/>

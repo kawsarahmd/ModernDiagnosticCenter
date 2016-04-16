@@ -307,7 +307,40 @@ namespace ModernDiagnosticCenter.Pages
 
             //obj.print_due.Text = sumDue.ToString();
 
-            obj.print_due.Text = (netPayable - int.Parse(paid_textbox.Text)).ToString();
+            string _due = (netPayable - int.Parse(paid_textbox.Text)).ToString();
+
+            obj.print_due.Text = _due;
+
+
+
+            string dbConnectionString = @"Data Source=patient.db;Version=3;";
+            SQLiteConnection sqlite_connection = new SQLiteConnection(dbConnectionString);
+
+            try
+            {
+                sqlite_connection.Open();
+                string query = "INSERT INTO test_details (_id,cost,discount,paid,due)   VALUES('" + _id.ToString() + "','" + this.net_cost_textfield.Text + "','" + this.discount_textfield.Text + "','" + this.paid_textbox.Text + "','" + _due  + "')";
+
+                SQLiteCommand create_command = new SQLiteCommand(query, sqlite_connection);
+                create_command.ExecuteNonQuery();
+                /*SQLiteDataReader dr = create_command.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string name = dr.GetString(1);
+                    combo_box.Items.Add(name);
+                }*/
+
+                sqlite_connection.Close();
+                MessageBox.Show("Successfully saved in database");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
 
            
 

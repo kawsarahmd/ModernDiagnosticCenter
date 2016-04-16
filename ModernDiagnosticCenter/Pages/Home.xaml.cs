@@ -231,59 +231,8 @@ namespace ModernDiagnosticCenter.Pages
             */
 
 
-            //all test information for printing
-           
-            TextBlock[] printSerialNo = { obj.print_no_1, obj.print_no_2, obj.print_no_3, obj.print_no_4, obj.print_no_5, obj.print_no_6, obj.print_no_7, obj.print_no_8, obj.print_no_9, obj.print_no_10 };
-            TextBlock[] printTestName = { obj.print_test_name_1, obj.print_test_name_2, obj.print_test_name_3, obj.print_test_name_4, obj.print_test_name_5, obj.print_test_name_6, obj.print_test_name_7, obj.print_test_name_8, obj.print_test_name_9, obj.print_test_name_10};
-            TextBlock[] printTestPrice = { obj.print_amount_1, obj.print_amount_2, obj.print_amount_3, obj.print_amount_4, obj.print_amount_5, obj.print_amount_6, obj.print_amount_7, obj.print_amount_8, obj.print_amount_9, obj.print_amount_10};
-            //file read from output.txt
-        
 
-            string line;
-            using (StreamReader file = new StreamReader("output.txt"))
-                //while((line = file.ReadLine()) != null )
-                for (int i = 0; i < testCount; i++ )
-                {
-
-                    int cost, due, discount, paid;
-
-                    printSerialNo[i].Text = (i + 1).ToString();
-                    printTestName[i].Text = file.ReadLine(); // test name read from file
-                    
-                    //read test cost as string and convert it to int and save it for calculation
-                    line = file.ReadLine();// read test cost
-                    cost = int.Parse(line);
-                    printTestPrice[i].Text = line;
-
-                    //read due cost as string and convert it to int and save it for calculation
-                    line = file.ReadLine();
-                  //  due = int.Parse(line);
-
-                    line = file.ReadLine();
-                   // discount = int.Parse(line);
-
-                    line = file.ReadLine();
-                  //  paid = int.Parse(line);
-
-
-                    //sumTestCost += cost;
-                    //sumDue += due;
-                    //sumDiscount += discount;
-                    //sumPaid += paid;
-                    
-                    //This is file data serial
-                    //combo_box.Text = "";
-                    //test_cost_textfield.Text = "";
-                    //due_textfield.Text = "";
-                    //discount_textfield.Text = "";
-                    //paid_textbox.Text = "";
-
-                    //dummy line
-                    //line = file.ReadLine();
-                    //line = file.ReadLine();
-                    //line = file.ReadLine();
-                    //index++;
-                }
+            SaveTestNameAndPrice(_id, obj);
 
             // PrinterWithScaling(obj);
 
@@ -312,32 +261,7 @@ namespace ModernDiagnosticCenter.Pages
             obj.print_due.Text = _due;
 
 
-
-            string dbConnectionString = @"Data Source=patient.db;Version=3;";
-            SQLiteConnection sqlite_connection = new SQLiteConnection(dbConnectionString);
-
-            try
-            {
-                sqlite_connection.Open();
-                string query = "INSERT INTO test_details (_id,cost,discount,paid,due)   VALUES('" + _id.ToString() + "','" + this.net_cost_textfield.Text + "','" + this.discount_textfield.Text + "','" + this.paid_textbox.Text + "','" + _due  + "')";
-
-                SQLiteCommand create_command = new SQLiteCommand(query, sqlite_connection);
-                create_command.ExecuteNonQuery();
-                /*SQLiteDataReader dr = create_command.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    string name = dr.GetString(1);
-                    combo_box.Items.Add(name);
-                }*/
-
-                sqlite_connection.Close();
-                MessageBox.Show("Successfully saved in database");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            TotalCostSave(_id, _due);
 
 
 
@@ -347,7 +271,7 @@ namespace ModernDiagnosticCenter.Pages
             obj.Show();
             obj.Close();
             printPage2(obj);
-            SaveInDatabase();
+            SaveInDatabase(_due);
             ClearFormData();
 
              index = 0;
@@ -357,6 +281,114 @@ namespace ModernDiagnosticCenter.Pages
              sumPaid = 0;
 
             return 1;
+        }
+
+        private void SaveTestNameAndPrice(long _id, PrintPage obj)
+        {
+
+            string dbConnectionString = @"Data Source=patient.db;Version=3;";
+            SQLiteConnection sqlite_connection = new SQLiteConnection(dbConnectionString);
+
+            try
+            {
+                sqlite_connection.Open();
+                //all test information for printing
+
+                TextBlock[] printSerialNo = { obj.print_no_1, obj.print_no_2, obj.print_no_3, obj.print_no_4, obj.print_no_5, obj.print_no_6, obj.print_no_7, obj.print_no_8, obj.print_no_9, obj.print_no_10 };
+                TextBlock[] printTestName = { obj.print_test_name_1, obj.print_test_name_2, obj.print_test_name_3, obj.print_test_name_4, obj.print_test_name_5, obj.print_test_name_6, obj.print_test_name_7, obj.print_test_name_8, obj.print_test_name_9, obj.print_test_name_10 };
+                TextBlock[] printTestPrice = { obj.print_amount_1, obj.print_amount_2, obj.print_amount_3, obj.print_amount_4, obj.print_amount_5, obj.print_amount_6, obj.print_amount_7, obj.print_amount_8, obj.print_amount_9, obj.print_amount_10 };
+                //file read from output.txt
+
+
+                string line;
+                using (StreamReader file = new StreamReader("output.txt"))
+                    //while((line = file.ReadLine()) != null )
+                    for (int i = 0; i < testCount; i++)
+                    {
+
+                        int cost, due, discount, paid;
+
+                        printSerialNo[i].Text = (i + 1).ToString();
+                        string test_name = file.ReadLine(); // test name read from file
+                        printTestName[i].Text = test_name;
+
+                        //read test cost as string and convert it to int and save it for calculation
+                        line = file.ReadLine();// read test cost
+                        cost = int.Parse(line);
+                        printTestPrice[i].Text = line;
+
+                        //read due cost as string and convert it to int and save it for calculation
+                        line = file.ReadLine();
+                        //  due = int.Parse(line);
+
+                        line = file.ReadLine();
+                        // discount = int.Parse(line);
+
+                        line = file.ReadLine();
+                        //  paid = int.Parse(line);
+
+
+                        //sumTestCost += cost;
+                        //sumDue += due;
+                        //sumDiscount += discount;
+                        //sumPaid += paid;
+
+                        //This is file data serial
+                        //combo_box.Text = "";
+                        //test_cost_textfield.Text = "";
+                        //due_textfield.Text = "";
+                        //discount_textfield.Text = "";
+                        //paid_textbox.Text = "";
+
+                        //dummy line
+                        //line = file.ReadLine();
+                        //line = file.ReadLine();
+                        //line = file.ReadLine();
+                        //index++;
+
+
+
+                        string query = "INSERT INTO test_id_cost (_id,cost,name)   VALUES('" + _id.ToString() + "','" + cost.ToString() + "','" + test_name + "')";
+
+                        SQLiteCommand create_command = new SQLiteCommand(query, sqlite_connection);
+                        create_command.ExecuteNonQuery();
+                    }
+
+
+
+                sqlite_connection.Close();
+                //MessageBox.Show("Successfully saved in database");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+
+
+        private void TotalCostSave(long _id, string _due)
+        {
+
+            string dbConnectionString = @"Data Source=patient.db;Version=3;";
+            SQLiteConnection sqlite_connection = new SQLiteConnection(dbConnectionString);
+
+            try
+            {
+                sqlite_connection.Open();
+                string query = "INSERT INTO test_details (_id,cost,discount,paid,due)   VALUES('" + _id.ToString() + "','" + this.net_cost_textfield.Text + "','" + this.discount_textfield.Text + "','" + this.paid_textbox.Text + "','" + _due + "')";
+
+                SQLiteCommand create_command = new SQLiteCommand(query, sqlite_connection);
+                create_command.ExecuteNonQuery();
+                sqlite_connection.Close();
+                MessageBox.Show("Successfully saved in database");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ClearFormData()
@@ -490,7 +522,7 @@ namespace ModernDiagnosticCenter.Pages
         }
         */
 
-        private void SaveInDatabase()
+        private void SaveInDatabase(string _due)
         {
             string dbConnectionString = @"Data Source=patient.db;Version=3;";
             SQLiteConnection sqlite_connection = new SQLiteConnection(dbConnectionString);
@@ -498,7 +530,7 @@ namespace ModernDiagnosticCenter.Pages
             try
             {
                 sqlite_connection.Open();
-                string query = "INSERT INTO patient_table (name,age,phone,cost,due,paid,sex,delivery_date,time,date,doctor,discount)   VALUES('" + this.name_textfield.Text + "','" + this.age_textbox.Text + "','" + this.phone_textbox.Text + "','" + this.test_cost_textfield.Text + "','" + this.net_cost_textfield.Text + "','" + this.paid_textbox.Text + "','" + this.home_sex_combobox.Text + "','" + this.home_datepicker.Text + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "','" + DateTime.Now.ToString("dd/MM/yyyy") + "','" + this.doctor_textfield.Text + "','" + this.discount_textfield.Text + "')";
+                string query = "INSERT INTO patient_table (name,age,phone,cost,due,paid,sex,delivery_date,time,date,doctor,discount)   VALUES('" + this.name_textfield.Text + "','" + this.age_textbox.Text + "','" + this.phone_textbox.Text + "','" + this.net_cost_textfield.Text + "','" + _due + "','" + this.paid_textbox.Text + "','" + this.home_sex_combobox.Text + "','" + this.home_datepicker.Text + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "','" + DateTime.Now.ToString("dd/MM/yyyy") + "','" + this.doctor_textfield.Text + "','" + this.discount_textfield.Text + "')";
 
                 SQLiteCommand create_command = new SQLiteCommand(query, sqlite_connection);
                 create_command.ExecuteNonQuery();
@@ -803,6 +835,11 @@ namespace ModernDiagnosticCenter.Pages
             
             home_sex_combobox.ItemsSource = list;
             //home_sex_combobox.SelectedIndex = 0;
+        }
+
+        private void net_cost_textfield_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
 
 

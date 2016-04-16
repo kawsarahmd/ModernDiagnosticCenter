@@ -93,17 +93,17 @@ namespace ModernDiagnosticCenter.Pages
                     update_age_textbox.Text = dr.GetInt16(2).ToString();
                     update_phone_textbox.Text = dr.GetString(3);
 
-                    update_test_cost_textfield.Text = dr.GetInt32(4).ToString();
-                    update_due_textbox.Text = dr.GetInt32(5).ToString();
+                    //update_test_cost_textfield.Text = dr.GetInt32(4).ToString();
+                    update_due_textbox.Text = dr.GetInt16(5).ToString();
                     //update_due_textfield.Text = dr.GetInt32(5).ToString();
                     //update_paid_textbox.Text = dr.GetInt32(6).ToString();
-                    update_paid_textfield.Text = dr.GetInt32(6).ToString();
+                    update_paid_textfield.Text = dr.GetInt16(6).ToString();
                     update_sex_textfield.Text = dr.GetString(7);
                     update_delivery_date.Text = dr.GetString(8);
                     update_date.Text = dr.GetString(10)  ;
                     update_time.Text = dr.GetString(9);
                     update_doctor_textfield.Text = dr.GetString(11);
-                    update_discount_textfield.Text = dr.GetInt32(12).ToString();
+                    update_discount_textfield.Text = dr.GetInt16(12).ToString();
                 }
                 else { MessageBox.Show("No Data Found!!!"); }
 

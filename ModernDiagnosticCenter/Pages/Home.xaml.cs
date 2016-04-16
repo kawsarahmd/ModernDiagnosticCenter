@@ -180,7 +180,7 @@ namespace ModernDiagnosticCenter.Pages
 
         private int printAllInfoAndSaveInDatabase()
         {
-            
+            long _id =0;
 
             if(testCount == 0)
             {
@@ -192,6 +192,16 @@ namespace ModernDiagnosticCenter.Pages
             // PrintPage obj = print_page();
             PrintPage obj = new PrintPage();
 
+
+
+            _id = printBillIDGenerator(_id) + 1;
+
+
+
+
+
+
+            obj.print_bill_id.Text = _id.ToString();
             obj.print_name.Text = name_textfield.Text;
             obj.print_age.Text = age_textbox.Text;
             obj.print_date.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -299,6 +309,26 @@ namespace ModernDiagnosticCenter.Pages
 
             obj.print_due.Text = (netPayable - int.Parse(paid_textbox.Text)).ToString();
 
+           
+
+            obj.Show();
+            obj.Close();
+            printPage2(obj);
+            SaveInDatabase();
+            ClearFormData();
+
+             index = 0;
+             sumTestCost = 0;
+             sumDiscount = 0;
+             sumDue = 0;
+             sumPaid = 0;
+
+            return 1;
+        }
+
+        private void ClearFormData()
+        {
+
             name_textfield.Text = "";
             age_textbox.Text = "";
             doctor_textfield.Text = "";
@@ -309,19 +339,36 @@ namespace ModernDiagnosticCenter.Pages
             net_cost_textfield.Text = "";
             paid_textbox.Text = "";
             discount_textfield.Text = "";
+        }
 
-            obj.Show();
-            obj.Close();
-            printPage2(obj);
-            SaveInDatabase();
+        private static long printBillIDGenerator(long _id)
+        {
+            string dbConnectionString = @"Data Source=patient.db;Version=3;";
+            SQLiteConnection sqlite_connection = new SQLiteConnection(dbConnectionString);
 
-             index = 0;
-             sumTestCost = 0;
-             sumDiscount = 0;
-             sumDue = 0;
-             sumPaid = 0;
+            try
+            {
+                sqlite_connection.Open();
+                string query = "select MAX(_id) from patient_table";
 
-            return 1;
+                SQLiteCommand create_command = new SQLiteCommand(query, sqlite_connection);
+                //create_command.ExecuteNonQuery();
+                SQLiteDataReader dr = create_command.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    //_id = dr.GetString(0);
+
+                    _id = dr.GetInt64(0);
+                }
+
+                sqlite_connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return _id;
         }
 
         private static void printPage2(PrintPage obj)
@@ -418,7 +465,7 @@ namespace ModernDiagnosticCenter.Pages
             try
             {
                 sqlite_connection.Open();
-                string query = "INSERT INTO patient_table (name,age,phone,cost,due,paid,sex,delivery_date,time,date,doctor)   VALUES('" + this.name_textfield.Text + "','" + this.age_textbox.Text + "','" + this.phone_textbox.Text + "','" + this.test_cost_textfield.Text + "','" + this.net_cost_textfield.Text + "','"  + this.paid_textbox.Text + "','" + this.home_sex_combobox.Text + "','" + this.home_datepicker.Text + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "','" + DateTime.Now.ToString("dd/MM/yyyy") + "','" + this.doctor_textfield.Text + "')";
+                string query = "INSERT INTO patient_table (name,age,phone,cost,due,paid,sex,delivery_date,time,date,doctor,discount)   VALUES('" + this.name_textfield.Text + "','" + this.age_textbox.Text + "','" + this.phone_textbox.Text + "','" + this.test_cost_textfield.Text + "','" + this.net_cost_textfield.Text + "','" + this.paid_textbox.Text + "','" + this.home_sex_combobox.Text + "','" + this.home_datepicker.Text + "','" + DateTime.Now.ToString("hh:mm:ss tt") + "','" + DateTime.Now.ToString("dd/MM/yyyy") + "','" + this.doctor_textfield.Text + "','" + this.discount_textfield.Text + "')";
 
                 SQLiteCommand create_command = new SQLiteCommand(query, sqlite_connection);
                 create_command.ExecuteNonQuery();

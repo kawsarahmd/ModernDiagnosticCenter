@@ -23,7 +23,7 @@ namespace ModernDiagnosticCenter.Pages
     
     public partial class Update : UserControl
     {
-        
+        private long _id;
        
         public Update()
         {
@@ -39,7 +39,74 @@ namespace ModernDiagnosticCenter.Pages
         {
             //update_name_textfield.Text = "Hello World";
 
-           clearTextFieldData();
+            string due = update_paid_textfield.Text;
+            if (string.IsNullOrWhiteSpace(due) || !due.Any(Char.IsDigit))
+            {
+                MessageBox.Show("Please enter due cost correctly");
+                update_paid_textfield.Focus();
+                return;
+            }
+
+            string temp = update_due_textbox.Text;
+            long _paid = long.Parse(temp);
+           
+
+            long _due = long.Parse(due);
+
+             if( _paid < _due)
+             {
+                 MessageBox.Show("Please enter due cost correctly");
+                 update_paid_textfield.Focus();
+                 return;
+
+
+             }
+
+             DueUpdate(_paid, _due);
+
+
+
+           
+            clearTextFieldData();
+        }
+
+        private void DueUpdate(long _paid, long _due)
+        {
+
+            long Due, Paid;
+
+            Due = _paid - _due;
+            Paid = _paid + _due;
+
+            string dbConnectionString = @"Data Source=patient.db;Version=3;";
+            SQLiteConnection sqlite_connection = new SQLiteConnection(dbConnectionString);
+
+            try
+            {
+                sqlite_connection.Open();
+
+                //string query = "select * from test_name where test_name='" + admin_test_name_combobox_update.Text + "'";
+                //int price = Int32.Parse(admin_price_update.Text);
+                string query = "UPDATE patient_table SET paid = " + Paid + " WHERE _id = '" + _id.ToString() + "'";
+
+                SQLiteCommand create_command = new SQLiteCommand(query, sqlite_connection);
+                create_command.ExecuteNonQuery();
+
+                query = "UPDATE patient_table SET due = " + Due + " WHERE _id = '" + _id.ToString() + "'";
+
+                create_command = new SQLiteCommand(query, sqlite_connection);
+                create_command.ExecuteNonQuery();
+                sqlite_connection.Close();
+                MessageBox.Show("Successfully Updated!!!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+           
         }
 
         private void clearTextFieldData()
@@ -79,6 +146,7 @@ namespace ModernDiagnosticCenter.Pages
             try
             {
                 sqlite_connection.Open();
+                _id = long.Parse(update_bill_no_textbox.Text);
                 //string query = "select * from test_name order by test_name.test_name asc";
                 string query = "select * from patient_table where _id = '" + update_bill_no_textbox.Text + "'";
 
@@ -90,20 +158,21 @@ namespace ModernDiagnosticCenter.Pages
                 {
                     //string name = dr.GetString(1);
                     update_name_textfield.Text = dr.GetString(1);
-                    update_age_textbox.Text = dr.GetInt16(2).ToString();
+                    update_age_textbox.Text = dr.GetInt64(2).ToString();
                     update_phone_textbox.Text = dr.GetString(3);
-
+                    update_test_cost_textfield.Text = dr.GetInt64(4).ToString();
                     //update_test_cost_textfield.Text = dr.GetInt32(4).ToString();
-                    update_due_textbox.Text = dr.GetInt16(5).ToString();
+                    update_due_textbox.Text = dr.GetInt64(5).ToString();
                     //update_due_textfield.Text = dr.GetInt32(5).ToString();
                     //update_paid_textbox.Text = dr.GetInt32(6).ToString();
-                    update_paid_textfield.Text = dr.GetInt16(6).ToString();
+
+                    update_paid_textfield.Text = dr.GetInt64(5).ToString();
                     update_sex_textfield.Text = dr.GetString(7);
                     update_delivery_date.Text = dr.GetString(8);
                     update_date.Text = dr.GetString(10)  ;
                     update_time.Text = dr.GetString(9);
                     update_doctor_textfield.Text = dr.GetString(11);
-                    update_discount_textfield.Text = dr.GetInt16(12).ToString();
+                    update_discount_textfield.Text = dr.GetInt64(12).ToString();
                 }
                 else { MessageBox.Show("No Data Found!!!"); }
 

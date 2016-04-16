@@ -25,7 +25,7 @@
         <Label Content="Due" HorizontalAlignment="Left" Margin="333,287,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Times New Roman"/>
         <Label Content="Test Delivery" HorizontalAlignment="Left" Margin="83,231,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Times New Roman"/>
         <Button Content="Update" HorizontalAlignment="Left" Margin="370,378,0,0" VerticalAlignment="Top" Width="117" Click="Button_Click" FontFamily="Times New Roman" FontWeight="Bold"/>
-        <Label Content="Paid" HorizontalAlignment="Left" Margin="328,315,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" FontFamily="Times New Roman"/>
+        <Label Content="Recover" HorizontalAlignment="Left" Margin="305,315,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" FontFamily="Times New Roman"/>
         <TextBox x:Name="update_due_textbox" HorizontalAlignment="Left" Height="23" Margin="370,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" IsEnabled="False" FontWeight="Bold" FontStyle="Italic" />
         <Label Content="Sex" HorizontalAlignment="Left" Margin="136,147,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Times New Roman"/>
         <TextBox x:Name="update_sex_textfield" HorizontalAlignment="Left" Height="23" Margin="176,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="311" IsEnabled="False" FontWeight="Bold" FontStyle="Italic"/>
